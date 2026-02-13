@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Valentín 💕</title>
+
+<style>
+body{
+margin:0;
+font-family:'Comic Sans MS', cursive;
+background:linear-gradient(135deg,#ffd6ec,#ffc2e2,#ffe6f5);
+overflow:hidden;
+text-align:center;
+}
+
+.container{
+background:white;
+margin:40px 20px;
+padding:25px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+position:relative;
+z-index:2;
+}
+
+h1{
+color:#ff4da6;
+font-size:24px;
+}
+
+img{
+width:100%;
+max-width:300px;
+border-radius:20px;
+margin:15px 0;
+}
+
+textarea{
+width:100%;
+height:120px;
+border-radius:15px;
+border:2px solid #ff99cc;
+padding:10px;
+font-family:inherit;
+margin-top:10px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:20px;
+font-size:18px;
+margin:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.si{
+background:#ff4da6;
+color:white;
+}
+
+.si:hover{
+transform:scale(1.1);
+}
+
+.no{
+background:#ff99cc;
+position:absolute;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+color:pink;
+animation:float 6s linear infinite;
+z-index:1;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-100vh);}
+}
+
+/* Gatitos */
+.cat{
+position:fixed;
+width:80px;
+animation:moveCat 20s linear infinite;
+z-index:0;
+}
+
+@keyframes moveCat{
+0%{left:-100px;}
+100%{left:110%;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Música nueva -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/T8TtE-enslA?autoplay=1&loop=1&playlist=T8TtE-enslA"
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<!-- Gatitos realistas calico -->
+<img src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg" class="cat" style="top:10%;">
+<img src="https://cdn2.thecatapi.com/images/bpc.jpg" class="cat" style="top:60%; animation-delay:5s;">
+
+<div class="container">
+<h1>¿Quieres ser mi San Valentín una vez más Melanie? 💖</h1>
+
+<img src="https://i.ibb.co/FktSVCNH/0029485f81cbf60301f81daaf7a49e01.jpg">
+
+<p>
+Muchas gracias por ser mi san Valentín todos estos años, cada uno de mis días a tu lado es lo mejor de mi vida,
+gracias por todo lo que haces por mí y por esforzarte tanto en nuestra relación,
+gracias por nunca rendirte y seguir a mi lado.
+Siempre voy a estar aquí para apoyarte en las buenas y en las malas mi amorcito 🩷🩷
+</p>
+
+<textarea placeholder="Escribe aquí otro mensaje especial para ella 💌"></textarea>
+
+<br>
+
+<button class="si" onclick="alert('Te amo muchísimo Melanie 💕')">Sí 💘</button>
+<button class="no" onmouseover="moverBoton(this)">No 😈</button>
+
+</div>
+
+<script>
+function moverBoton(btn){
+btn.style.top=Math.random()*window.innerHeight+"px";
+btn.style.left=Math.random()*window.innerWidth+"px";
+}
+
+function crearCorazon(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.style.left=Math.random()*100+"vw";
+heart.innerHTML="💖";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+}
+
+setInterval(crearCorazon,500);
+</script>
+
+</body>
+</html>
